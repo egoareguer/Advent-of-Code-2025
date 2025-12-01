@@ -1,3 +1,8 @@
+from pathlib import Path
+script_dir = Path(__file__).parent
+file_path = script_dir / '../input.txt'
+
+
 dial=50
 halts_at_zero=0
 
@@ -31,7 +36,7 @@ def rotate(dial, input):
         rotations += 1 
     return (end, rotations)
 
-with open('../input.txt', 'r') as input:
+with open(file_path, 'r') as input:
     for line in input: 
         passages=0
         dial, passages=rotate(dial, line)
